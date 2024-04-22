@@ -1,0 +1,41 @@
+<PSDhcpAutoSync>
+    <!-- File where console logs are created -->
+    <LogFileName>.\DhcpAutoSyncLogfile.txt</LogFileName>
+    
+    <!-- 
+        Periodic Retry Interval (in minutes) 
+        This is the duration between two successive Failover Replication attempts
+    -->
+    <PeriodicRetryInterval>30</PeriodicRetryInterval>
+    
+    
+    <!-- 
+        Default Replication Mode: 
+            By default, the tool auto synchronizes the changes across all 
+     Failover (relations on this server 
+
+        Selective Replication Mode: 
+            If you choose to include only specific Failover relation(s) that 
+     should be synchronized by this tool, do the following
+
+            a) Uncomment <FailoverRelationships> node given below
+            b) Add the Failover relationship names under <Include> node, 
+ the ones you wish the tool should auto synchronize.
+               [This means, all the other relationships will be ignored by the tool]
+            c) Add the Failover relationship names under <Exclude> node, 
+               the ones you wish the tool should Exclude from auto synchronization.
+               [This means, all the other relationships will be 
+                considered by the tool for auto synchronization]
+    -->
+    
+    <!--
+    <FailoverRelationships>
+        <Include>
+            <Relation>FailoverServer1-FailverServer2</Relation>
+        </Include>
+        <Exclude>
+            <Relation>FailoverServer1-FailoverServerver3</Relation>
+        </Exclude>
+    </FailoverRelationships>
+    -->
+</PSDhcpAutoSync>
